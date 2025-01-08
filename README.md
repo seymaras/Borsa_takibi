@@ -1,80 +1,107 @@
-Hisse Senedi Tahmin ve Portföy Yönetim Uygulaması
+# 📈 Borsa Tahmin ve Portföy Yönetim Sistemi
 
-Bu proje, yatırımcıların hisse senedi piyasasında daha bilinçli kararlar alabilmelerini sağlamak amacıyla geliştirilmiş bir tahmin ve portföy yönetim sistemidir. Kullanıcılar, hisse senetleri için fiyat tahminleri alabilir, teknik analiz göstergelerini inceleyebilir ve kendi portföylerini kolayca yönetebilirler.
+Yapay zeka destekli borsa tahmin ve portföy yönetim uygulaması. BIST hisseleri için fiyat tahminleri yapın, teknik analizleri inceleyin ve portföyünüzü profesyonelce yönetin.
 
-Özellikler
+## 🚀 Özellikler
 
-Kullanıcı Yönetimi: Kullanıcılar kayıt olabilir ve sisteme giriş yapabilir.
-Hisse Senedi Tahminleri: Makine öğrenimi algoritmalarıyla hisse senetleri için gelecek fiyat tahminleri.
-Teknik Analiz: MA20, MA50, RSI gibi teknik göstergelerle detaylı analiz.
-Portföy Yönetimi: Hisse senetlerini portföye ekleme, alış fiyatı ve miktarını belirterek performans takibi.
-Grafiksel Gösterim: Hisse fiyatları ve teknik göstergelerin interaktif görsel sunumu.
-Kurulum
+- **Akıllı Tahminler**: Makine öğrenimi ile gelecek fiyat tahminleri
+- **Teknik Analiz**: MA20, MA50, RSI göstergeleri ile detaylı analiz
+- **Portföy Takibi**: Hisselerinizi ekleyin, performansınızı izleyin
+- **Görsel Grafikler**: İnteraktif fiyat ve gösterge grafikleri
+- **Kullanıcı Yönetimi**: Güvenli kayıt ve giriş sistemi
 
-Gerekli Yazılımlar
-Proje için aşağıdaki yazılımların ve kütüphanelerin kurulu olması gerekmektedir:
+## 🛠️ Teknolojiler
 
-Python (3.9 veya üzeri)
-Flask Framework
-SQLite
-yfinance
-scikit-learn
-pandas
-numpy
-Adımlar
-Proje Dosyalarını İndirin
-git clone https://github.com/yourusername/hisse-tahmin-uygulamasi.git
-cd hisse-tahmin-uygulamasi
-Gerekli Python Kütüphanelerini Yükleyin
+- **Backend**: Python Flask
+- **Frontend**: HTML5, CSS3, JavaScript
+- **Veritabanı**: SQLite
+- **Veri Kaynağı**: Yahoo Finance API
+- **ML**: scikit-learn (RandomForestRegressor)
+
+## ⚙️ Kurulum
+
+### Gereksinimler
+
+- Python 3.9+
+- pip (Python paket yöneticisi)
+
+### Adımlar
+
+1. Projeyi klonlayın:
+
+```bash
+git clone https://github.com/kullaniciadi/borsa-tahmin-sistemi.git
+cd borsa-tahmin-sistemi
+```
+
+2. Sanal ortam oluşturun:
+
+```bash
+python -m venv venv
+source venv/bin/activate  # Linux/Mac için
+venv\Scripts\activate     # Windows için
+```
+
+3. Gereksinimleri yükleyin:
+
+```bash
 pip install -r requirements.txt
-Veritabanını Hazırlayın
-Veritabanı yapısını oluşturmak için ilgili script'i çalıştırın:
-python setup_database.py
-Uygulamayı Çalıştırın
-Uygulamayı başlatmak için aşağıdaki komutu çalıştırın:
+```
+
+4. Uygulamayı başlatın:
+
+```bash
 python app.py
-Uygulama, tarayıcınızda http://127.0.0.1:5000 adresinde çalışacaktır.
-Kullanım
+```
 
-Kayıt ve Giriş
-Ana sayfadan kayıt olun veya mevcut bilgilerinizle giriş yapın.
-Hisse Senedi Tahmini
-Hisse kodunu girin (örn: THYAO.IS)
-Tahmin tarihini seçin.
-"Tahmin Et" butonuna tıklayın.
-Portföy Yönetimi
-"Portföy" sekmesinden hisse senedi ekleyin.
-Alış fiyatı ve miktarını girerek portföyünüzü oluşturun.
-Portföy performansınızı kolayca takip edin.
-Teknik Detaylar
+5. Tarayıcınızda açın:
 
-Veritabanı Yapısı
-users Tablosu
+```
+http://127.0.0.1:5001
+```
 
-Alan Tür Açıklama
-id INTEGER Primary Key
-username TEXT Kullanıcı Adı
-password TEXT Şifre
-portfolios Tablosu
+## 📱 Kullanım
 
-Alan Tür Açıklama
-id INTEGER Primary Key
-user_id INTEGER Foreign Key (users.id)
-symbol TEXT Hisse Sembolü
-quantity INTEGER Miktar
-purchase_price REAL Alış Fiyatı
-purchase_date DATE Alış Tarihi
-Kullanılan Teknolojiler
-Backend: Flask (Python)
-Frontend: HTML, CSS, JavaScript
-Veritabanı: SQLite
-Veri Kaynağı: Yahoo Finance API
-Makine Öğrenimi: RandomForestRegressor
-Önemli Dosyalar
+1. **Kayıt/Giriş**
 
-app.py → Uygulamanın ana dosyası.
-setup_database.py → Veritabanı kurulum script'i.
-static/ → CSS ve JavaScript dosyaları.
-templates/ → HTML dosyaları.
-requirements.txt → Gerekli Python kütüphaneleri.
-Katkıda Bulunma
+   - Yeni hesap oluşturun veya mevcut hesabınızla giriş yapın
+
+2. **Hisse Tahmini**
+
+   - Hisse kodunu girin (örn: THYAO.IS)
+   - Tahmin tarihini seçin
+   - "Tahmin Et" butonuna tıklayın
+
+3. **Portföy Yönetimi**
+   - "Portföy" sekmesinden hisse ekleyin
+   - Alış bilgilerini girin
+   - Performans takibini yapın
+
+## 💾 Veritabanı Yapısı
+
+### Users Tablosu
+
+| Alan     | Tür     | Açıklama      |
+| -------- | ------- | ------------- |
+| id       | INTEGER | Primary Key   |
+| username | TEXT    | Kullanıcı Adı |
+| password | TEXT    | Şifre         |
+
+### Portfolios Tablosu
+
+| Alan           | Tür     | Açıklama    |
+| -------------- | ------- | ----------- |
+| id             | INTEGER | Primary Key |
+| user_id        | INTEGER | Foreign Key |
+| symbol         | TEXT    | Hisse Kodu  |
+| quantity       | INTEGER | Adet        |
+| purchase_price | REAL    | Alış Fiyatı |
+| purchase_date  | DATE    | Alış Tarihi |
+
+## 🤝 Katkıda Bulunma
+
+1. Fork edin
+2. Feature branch oluşturun (`git checkout -b yeni-ozellik`)
+3. Değişikliklerinizi commit edin (`git commit -m 'Yeni özellik eklendi'`)
+4. Branch'inizi push edin (`git push origin yeni-ozellik`)
+5. Pull Request oluşturun
