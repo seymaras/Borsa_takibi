@@ -163,8 +163,17 @@ def register():
         try:
             cursor.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
             conn.commit()
+            
+            # Kullanıcı ID'sini al
+            cursor.execute("SELECT id FROM users WHERE username = ?", (username,))
+            user = cursor.fetchone()
+            
+            # Oturum bilgilerini ayarla
+            session["username"] = username
+            session["id"] = user[0]
+            
             flash("Kayıt başarılı!", "success")
-            return redirect(url_for("login"))
+            return redirect(url_for("tahmin"))  # Login yerine direkt tahmin sayfasına yönlendir
         except sqlite3.IntegrityError:
             flash("Bu kullanıcı adı zaten alınmış!", "danger")
         conn.close()
