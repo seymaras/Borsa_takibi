@@ -173,10 +173,11 @@ def register():
             session["id"] = user[0]
             
             flash("Kayıt başarılı!", "success")
-            return redirect(url_for("tahmin"))  # Login yerine direkt tahmin sayfasına yönlendir
+            return redirect(url_for("tahmin"))  # Tahmin sayfasına yönlendir
         except sqlite3.IntegrityError:
             flash("Bu kullanıcı adı zaten alınmış!", "danger")
-        conn.close()
+        finally:
+            conn.close()
 
     return render_template("register.html")
 
@@ -215,8 +216,7 @@ def tahmin():
     if "username" not in session:
         flash("Lütfen önce giriş yapın!", "danger")
         return redirect(url_for("login"))
-
-    # Tahmin işlemleri burada yapılacak
+    
     return render_template('tahmin.html')
 
 @app.route('/add_to_portfolio', methods=['POST'])
